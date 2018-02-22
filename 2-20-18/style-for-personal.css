@@ -1,15 +1,19 @@
+/* format for all tables in about-francy and my-courses page*/
 table, th, td {
   border: 1px solid black;
 }
 
+/* centering text for about-francy page*/
 td[colspan="6"] {
   text-align: center;
 }
 
+/* centering text for my-course page*/
 td[colspan="3"] {
   text-align: center;
 }
 
+/* make text blue for my-course page and about-francy page*/
 thead {
   color: blue;
 }
