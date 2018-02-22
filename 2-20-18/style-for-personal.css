@@ -1,0 +1,11 @@
+table, th, td {
+  border: 1px solid black;
+}
+
+td[colspan="6"] {
+  text-align: center;
+}
+
+td[colspan="3"] {
+  text-align: center;
+}
