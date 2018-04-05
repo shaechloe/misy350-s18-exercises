@@ -1,41 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>First JS Exercise</title>
-    <script>
-      //string concatination
-      var greeting = 'Hello';
-      var user = 'Shae';
-      console.log(greeting + ' ' + user + '!');
-      console.log('Hello World'.length);
-      console.log('Hello World'.toUpperCase());
-      console.log('      Hello     World     '.trim());
 
-      //if statment
-      if (user == 'Shae'){
-        console.log('Dogs');
-      } else if (user == 'Harry') {
-        console.log('Potter');
+<head>
+  <meta charset="utf-8">
+  <title>First JS Exercise</title>
+  <script>
+    //string concatination
+    var greeting = 'Hello';
+    var user = 'Shae';
+    console.log(greeting + ' ' + user + '!');
+    console.log('Hello World'.length);
+    console.log('Hello World'.toUpperCase());
+    console.log('      Hello     World     '.trim());
+
+    //if statment
+    if (user == 'Shae') {
+      console.log('Dogs');
+    } else if (user == 'Harry') {
+      console.log('Potter');
+    } else {
+      console.log("I don't know u");
+    }
+
+    //ternary operator practice
+    user == 'Shae' ? console.log("Dogs") : console.log("dont know u");
+
+    //grading Exercise part
+    var grade = 75;
+
+    function grade_calc(g) {
+      if (g >= 90) {
+        return 'U Rock, you got an A';
+      } else if (g >= 80) {
+        return 'you got a B';
+      } else if (g >= 70) {
+        return 'You got a C';
+      } else if (g >= 60) {
+        return 'You got a D';
       } else {
-        console.log("I don't know u");
+        return 'You got an F';
       }
+    }
+  console.log('you got ' + grade_calc(90));
+  </script>
+</head>
 
-      //ternary operator practice
-      user == 'Shae'? console.log("Dogs"):console.log("dont know u");
+<body>
+  <h1>See console for output.</h1>
+</body>
 
-      //grading Exercise part
-      var grade = 85;
-      if (grade >= 90){
-        console.log('U Rock, you got an A');
-      } else if (grade >= 80) {
-        console.log('you got a B');
-      } else {
-        console.log('u suck');
-      }
-    </script>
-  </head>
-  <body>
-    <h1>See console for output.</h1>
-  </body>
 </html>
