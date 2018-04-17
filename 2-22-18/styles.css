@@ -5,3 +5,7 @@ color:green;
 table, td {
 border: 1px solid black;
 }
+
+.hi target="CSS" {
+  color: blue;
+}
