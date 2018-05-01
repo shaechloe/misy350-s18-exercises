@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>songs</title>
+  </head>
+  <body>
+    <h1>Coldplay Top Hits:</h1>
+    {# this is a loop#}
+    <ul>
+      {% for songs in songs %}
+      <li>{{songs}}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
