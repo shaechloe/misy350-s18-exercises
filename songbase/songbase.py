@@ -15,16 +15,6 @@ def users(username):
     return render_template('user.html', uname=username)
 
 
-@app.route('/songs')
-def shaw_all_songs():
-        songs = [
-        'Paradise',
-        'Yellow',
-        'Viva La Vida'
-        ]
-        return render_template ('song-all.html', songs=songs)
-
-
 @app.route('/user')
 def user():
         return "this is the page for users"
