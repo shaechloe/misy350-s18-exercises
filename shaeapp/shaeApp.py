@@ -8,27 +8,17 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/form-basics')
+@app.route('/form')
 def form():
-    return render_template('form-basics.html')
-
-
-@app.route('/form-basics')
-def form():
-    first_name = request.args.get('first_name')
-    return first_name
+    return render_template('form.html')
 
 
 @app.route('/users/<string:username>/')
 def users(username):
     #return "hello" + username
     ##return "<h1>hello %s</h1>" % username
-    return render_template('user.html', uname=username)
+    return render_template('users.html', uname=username)
 
-
-@app.route('/user')
-def user():
-        return "this is the page for users"
 
 
 if __name__ == '__main__':
