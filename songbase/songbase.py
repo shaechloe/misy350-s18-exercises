@@ -25,6 +25,11 @@ class Song(db.Model):
     lyrics = db.Column(db.Text)
     artist_id = db.Column(db.Integer, db.ForeignKey('artists.id'))
 
+@app.route('/artists')
+def all_artists():
+    artists = Artist.query.all()
+    return render_template('all-artists.html', artists=artists)
+
 
 @app.route('/')
 def index():
@@ -46,6 +51,17 @@ def users(username):
     #return "hello" + username
     ##return "<h1>hello %s</h1>" % username
     return render_template('user.html', uname=username)
+
+
+@app.route('/artist/edit/<int:id>/')
+def artist_edit(id):
+    artist = Artist.query.filter_by(id=id).first()
+    artist.about = "this is shae"
+    db.session.commit()
+
+    return "this is artist %d updated" % id
+    #return render_template('all-artists.html')
+    # return render_template('user.html', uname=username)
 
 
 @app.route('/user')
