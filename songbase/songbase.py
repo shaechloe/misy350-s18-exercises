@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request, flash, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
@@ -35,6 +35,72 @@ def all_artists():
 def index():
     ## return "<h1>hello shae</h1>" ##this returns html
     return render_template('index.html')
+
+
+@app.route('/artist/add', methods=['GET', 'POST'])
+def add_artists():
+    if request.method == 'GET':
+        return render_template('artist-add.html')
+    if request.method == 'POST':
+        # get data from the form
+        name = request.form['name']
+        about = request.form['about']
+
+        # insert the data into the database
+        artist = Artist(name=name, about=about)
+        db.session.add(artist)
+        db.session.commit()
+        return redirect(url_for('all-artists'))
+
+
+@app.route('/api/artist/add', methods=['POST'])
+def add_ajax_artists():
+    # get data from the form
+    name = request.form['name']
+    about = request.form['about']
+
+    # insert the data into the database
+    artist = Artist(name=name, about=about)
+    db.session.add(artist)
+    db.session.commit()
+    # flash message type: success, info, warning, and danger from bootstrap
+    flash('Artist Inserted', 'success')
+    return jsonify({"id": str(artist.id), "name": artist.name})
+
+
+@app.route('/artist/edit/<int:id>', methods=['GET', 'POST'])
+def edit_artist(id):
+    artist = Artist.query.filter_by(id=id).first()
+    if request.method == 'GET':
+        return render_template('artist-edit.html', artist=artist)
+    if request.method == 'POST':
+        # update data based on the form data
+        artist.name = request.form['name']
+        artist.about = request.form['about']
+        # update the database
+        db.session.commit()
+        return redirect(url_for('all-artists'))
+
+
+@app.route('/artist/delete/<int:id>', methods=['GET', 'POST'])
+def delete_artist(id):
+    artist = Artist.query.filter_by(id=id).first()
+    if request.method == 'GET':
+        return render_template('artist-delete.html', artist=artist)
+    if request.method == 'POST':
+        # delete the artist by id
+        # all related songs are deleted as well
+        db.session.delete(artist)
+        db.session.commit()
+        return redirect(url_for('all-artists'))
+
+
+@app.route('/api/artist/<int:id>', methods=['DELETE'])
+def delete_ajax_artist(id):
+    artist = Artist.query.get_or_404(id)
+    db.session.delete(artist)
+    db.session.commit()
+    return jsonify({"id": str(artist.id), "name": artist.name})
 
 
 @app.route('/form', methods=['GET', 'POST'])

@@ -4,29 +4,94 @@
 {% block content%}
 <h1>This page shows all artists in the database</h1>
 
+<!-- Page Content -->
+ <div class="container">
+   <h1 class="mt-5"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Artists:</h1>
+   <div class="row bottom-margin">
+     <a href="/artist/add" class="btn btn-primary" role="button" aria-disabled="true">Add Artists</a>
+   </div>
 {% if artists %}
-  <h2>we have data</h2>
+<h2>we have data</h2>
   <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Artist Name</th>
-      <th scope="col">About</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for artist in artists %}
-    <tr>
-      <th scope="row">{{artist.id}}</th>
-      <td>{{artist.name}}</td>
-      <td>{{artist.about}}</td>
-    </tr>
-    {% endfor%}
-  </tbody>
-</table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>About</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+      <tbody>
+      {% for artist in artists %}
+        <tr>
+          <th scope="row">{{artist.id}}</th>
+          <td>{{artist.name}}</td>
+          <td>{{artist.about}}</td>
+          <td>
+            <a href="/artist/edit/{{artist.id}}" class="btn btn-success" role="button">Edit</a>
+            <a href="/artist/delete/{{artist.id}}" class="btn btn-danger" role="button">Delete</a>
+            <button class="btn btn-warning delete_ajax_btn" role="button" data-artist-id="{{artist.id}}">Delete Ajax</a>
+          </td>
+        </tr>
+      {% endfor%}
+      </tbody>
+    </table>
+    {% else %}
+      <h2>artist table is empty</h2>
+      <h3>there is no artists in the database yet.</h3>
+    {% endif %}
+  </div>
+{% endblock%}
 
-{% else %}
-  <h2>artist table is empty</h2>
-{% endif %}
-
+{% block scripts%}
+{{super()}}
+<script>
+  $(document).ready(function() {
+    $(".delete_ajax_btn").click(function(event) {
+      var artist_id = $(this).data("artist-id");
+      // get the table row of this song
+      var row = $(this).parent().parent();
+      swal({
+          title: "Are you sure?",
+          text: "All songs of this artist will be deleted too!",
+          type: "warning",
+          html: true,
+          showCancelButton: true,
+          confirmButtonColor: "#DD6B55",
+          confirmButtonText: "Yes, delete it!",
+          closeOnConfirm: false,
+          showLoaderOnConfirm: true
+        },
+        function(isConfirm) {
+          if (isConfirm) {
+            $.ajax({
+                type: "DELETE",
+                url: "/api/artist/" + artist_id,
+                success: function(response) {
+                  console.log(response);
+                  row.remove(); // remove the table row
+                  swal({
+                    title: "Deleted!",
+                    text: response.name + " has been deleted.",
+                    type: "success",
+                    timer: 2500,
+                    showConfirmButton: false
+                  }); // end of SweetAlert
+                } // end of success callback function
+              }) // end of ajax call
+              .fail(function(error) {
+                // console.log(data);
+                swal({
+                  title: "Oops...",
+                  text: "Deletion failed",
+                  type: "error",
+                  timer: 2000,
+                  showConfirmButton: false
+                }); // end of SweetAlert
+              }); // end of fail callback function
+          } // end of if confirmed block
+        }); // end of confirmed function of SweetAlert
+    }); // end of button click event function
+  }); // end doc ready
+</script>
 {% endblock%}

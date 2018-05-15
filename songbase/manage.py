@@ -12,7 +12,7 @@ def deploy():
     db.create_all()
 
     print "inserting intial data"
-    coldplay = Artist(name="coldplay", about="this is coldplay")
+    coldplay = Artist(name='Coldplay', about="this is coldplay")
     m5 = Artist(name="Maroon 5", about="this is Maroon 5")
 
 
