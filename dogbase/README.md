@@ -20,13 +20,13 @@ Group ID |     Group Name   | About
 ## Breed Table  :
 
 Breed ID | Breed Name | Size | Color | Description | Group Name
-------| -------------| --------|------|-----------------------|---------|
+------| -------------| --------|------|------------|---------|
 1 | Dandie Dinmont Terrier |  Small | Mustard or Pepper | The unique looking Dandie Dinmont Terrier is a tough but dignified little exterminator. Sturdily built for the rigors of farm life, they will agreeably adapt to city living. Dandies are compact companions blessed with a big personality. | Terrier Group
 2 | Dogue de Bordeaux |  Extra Large | Fawn, Isabella, Mahogany, or Red | The most ancient of French dog breeds, the Dogue de Bordeaux ('Mastiff of Bordeaux') was around even before France was France. These brawny fawn-coated guardians of considerable courage are famously loyal, affectionate, and protective. | Working Group
 3 | English Setter|  Medium | Black and White| The English Setter is a medium sized sporting dog of sweet temper and show stopping good looks. It is one of the AKCs four British setters created to work on the distinctly different terrains of England, Ireland, and Scotland.| Sporting Group
 4 | Papillon |  Extra Small |White and Black, Lemon, Red, Sable, or Tan| The quick, curious Papillon is a toy dog of singular beauty and upbeat athleticism. Despite his refined appearance, the Pap is truly a 'doggy dog' blessed with a hardy constitution. Papillon fanciers describe their breed as happy, alert, and friendly.| Toy Group
 5 | Dalmatian|  Medium | Black and White | The dignified Dalmatian, dogdom's citizen of the world, is famed for his spotted coat and unique job description. During their long history, these coach dogs have accompanied the horse-drawn rigs of nobles, gypsies, and firefighters. | Non-Sporting Group
-6 | American Foxhound |  Medium| American Foxhounds are good-natured, low-maintenance hounds who get on well with kids, dogs, even cats, but come with special considerations for prospective owners. They are closely associated with Revolutionary heroes and the rolling estates of old Virginia. | Hound Group
+6 | American Foxhound |  Medium| Black, White and Tan or White Black and Tan | American Foxhounds are good-natured, low-maintenance hounds who get on well with kids, dogs, even cats, but come with special considerations for prospective owners. They are closely associated with Revolutionary heroes and the rolling estates of old Virginia. | Hound Group
 7 | Border Collie |  Medium | Wide Range and Mix of Colors |A remarkably bright workaholic, the Border Collie is an amazing dog..maybe a bit too amazing for owners without the time, energy, or means to keep it occupied. These energetic dogs will settle down for cuddle time when the workday is done. | Herding Group
 
 
