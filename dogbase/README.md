@@ -20,7 +20,7 @@ Group ID |     Group Name   | About
 ## Breed Table  :
 
 Breed ID | Breed Name | Size | Color | Description | Group Name
-------| -------------| --------|------|----------|---------|
+------| -------------| --------|------|-----------------------|---------|
 1 | Dandie Dinmont Terrier |  Small | Mustard or Pepper | The unique looking Dandie Dinmont Terrier is a tough but dignified little exterminator. Sturdily built for the rigors of farm life, they will agreeably adapt to city living. Dandies are compact companions blessed with a big personality. | Terrier Group
 2 | Dogue de Bordeaux |  Extra Large | Fawn, Isabella, Mahogany, or Red | The most ancient of French dog breeds, the Dogue de Bordeaux ('Mastiff of Bordeaux') was around even before France was France. These brawny fawn-coated guardians of considerable courage are famously loyal, affectionate, and protective. | Working Group
 3 | English Setter|  Medium | Black and White| The English Setter is a medium sized sporting dog of sweet temper and show stopping good looks. It is one of the AKCs four British setters created to work on the distinctly different terrains of England, Ireland, and Scotland.| Sporting Group
