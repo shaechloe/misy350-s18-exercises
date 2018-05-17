@@ -1,0 +1,17 @@
+body {
+  padding-top: 54px;
+  background-color: lightblue;
+}
+
+img {
+  width: 50%;
+  hight: 50%;
+}
+
+.container {
+  font-family: 'Happy Monkey', cursive;
+}
+
+.bottom-margin {
+  margin-bottom: 10px;
+}

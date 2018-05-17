@@ -1,0 +1,55 @@
+{% extends "base.html"%}
+{% block title %}Home Page{% endblock %}
+{% block head%}
+{{super()}}
+  <style>
+    body {
+      padding: 75px;
+    }
+    img {
+      height: 100;
+      width: 100;
+      border-radius:180px;
+    }
+  </style>
+{% endblock %}
+{% block page_content%}
+
+  <div class="container">
+    <h1 class="mt-5"><i class="fa fa-gratipay" aria-hidden="true"></i> Welcome to DogBase!</h1>
+    <h5>
+        <p>
+        DogBase is a web application that allows users to add, update and delete groups and breeds of dogs in a database.
+        It may sound strange that dogs are apart of groups. You may think, dogs are canines and that is that. However, in dog shows
+        there is need to be able to break dogs in to groups to able to judge them accuratly and fairly. There are 7 groups that dogs
+        can be put into: Terrier, Toy, Working, Sporting, Non-Sporting, Hound, and Herding. Dog breeds are assigned to one of
+        seven groups representing characteristics and functions the breeds were originally bred for.
+        </br>
+        </br>
+        Dog Groups have changed in the past and can change in the future and DogBase allows for these changes. DogBase lets you add,
+        delete and change groups and, with referral integrity, the corisponding breeds change with it. DogBase also alows for
+        users to add new dog breeds and change breeds.
+        </br>
+        </br>
+        I hope you enjoy DogBase!
+      </p>
+    </h5>
+  </div>
+  <div class="outer">
+    <center>
+      <img src="{{ url_for('static', filename='img/hifive.gif') }}"></center>
+  </div><br>
+
+<!--  <div class="inner">
+    <center>
+      <img src="{{ url_for('static', filename='img/giphy.gif') }}">
+    </center>
+  </div><br>
+
+  <div class="outer">
+    <center>
+      <img src="{{ url_for('static', filename='img/tesla-gif.gif') }}">
+    </center>
+  </div> -->
+
+  {% endblock%}

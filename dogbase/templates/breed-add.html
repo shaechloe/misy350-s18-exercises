@@ -1,0 +1,52 @@
+{% extends "base.html"%}
+{% block title %}Add Breed{% endblock %}
+{% block head%}
+{{super()}}
+  <style>
+    body {
+      padding: 75px;
+    }
+    img {
+      height: 100;
+      width: 100;
+      border-radius:180px;
+    }
+  </style>
+{% endblock %}
+{% block page_content%}
+
+  <div class="container">
+    <h1 class="mt-5"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add Breed:</h1>
+    <form action="/breed/add" method="post">
+      <div class="form-group">
+        <label>Name</label>
+        <input class="form-control" type="text" name="name" placeholder="Name of the Breed" required="true">
+      </div>
+      <div class="form-group">
+        <label>Size</label>
+        <textarea class="form-control" name="about" placeholder="Size of the Breed" required="true"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Color</label>
+        <textarea class="form-control" name="color" placeholder="Color(s) of the Breed" required="true"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea class="form-control" name="description" placeholder="Brief Description of Breed" required="true"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Group</label>
+        <select class="form-control" name="group">
+          {% for group in group %}
+              <option>{{group.name}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="form-group">
+        Group not in the list? <a href="/group/add" class="btn btn-success" role="button" aria-disabled="true">Add Group</a>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Breed</button>
+    </form>
+  </div>
+
+{% endblock%}

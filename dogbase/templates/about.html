@@ -1,0 +1,61 @@
+{% extends "base.html"%}
+{% block title %}Home Page{% endblock %}
+{% block head%}
+{{super()}}
+  <style>
+    body {
+      padding: 75px;
+    }
+    img {
+      height: 100;
+      width: 100;
+      border-radius:180px;
+    }
+    .list-social-icons a {
+      color: #1818cc;
+    }
+
+    .list-social-icons a:hover {
+      color: lightblue;
+    }
+  </style>
+{% endblock %}
+
+{% block page_content%}
+  <!-- Page Content -->
+  <div class="container">
+    <h1 class="mt-5"><i class="fa fa-gratipay" aria-hidden="true"></i> About the DogBase Developer</h1>
+    <section class="about-section p-3 p-lg-5 d-flex d-column">
+      <div class="my-auto">
+        <p class="mb-0">This project is developed by Shae Muller for <strong>MISY 350</strong>.</p>
+        <ul class="list-inline list-social-icons mb-0">
+          <li class="list-inline-item">
+            <a href="https://www.linkedin.com/in/shae-muller/" data-toggle="tooltip" title="LinkedIn" target="_blank">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/shaechloe" data-toggle="tooltip" title="GitHub" target="_blank">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  <img src="{{ url_for('static', filename='img/me.jpg')}}" alt="">
+{% endblock%}
+
+{% block scripts%}
+  {{super()}}
+  <script>
+  $(document).ready(function () {
+    $('#developer').tooltip()
+  });
+  </script>
+{% endblock%}

@@ -1,0 +1,56 @@
+{% extends "base.html"%}
+{% block title %}Edit Breed{% endblock %}
+{% block head%}
+{{super()}}
+  <style>
+    body {
+      padding: 75px;
+    }
+    img {
+      height: 100;
+      width: 100;
+      border-radius:180px;
+    }
+  </style>
+{% endblock %}
+{% block page_content%}
+
+<div class="container">
+  <h1 class="mt-5"><i class="fa fa-pencil" aria-hidden="true"></i> Edit Breed:</h1>
+  <form action="/breed/edit/{{breed.id}}" method="post">
+    <div class="form-group">
+      <label>Name</label>
+      <input class="form-control" type="text" name="name" value="{{breed.name}}" required="true">
+    </div>
+    <div class="form-group">
+      <label>Size</label>
+      <textarea class="form-control" type="text" name="about" value="{{breed.size}}" required="true"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Color</label>
+      <textarea class="form-control" type="text" name="color" value="{{breed.color}}" required="true"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <textarea class="form-control" type="text" name="description" value="{{breed.description}}" required="true"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Group</label>
+      <select class="form-control" name="group">
+            {% for group in group %}
+              {% if group == breed.group %}
+                <option selected="selected">{{group.name}}</option>
+              {% else %}
+                <option>{{group.name}}</option>
+              {% endif %}
+            {% endfor %}
+          </select>
+    </div>
+    <div class="form-group">
+      Group not in the list? <a href="/group/add" class="btn btn-success" role="button" aria-disabled="true">Add Group</a>
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+  </form>
+</div>
+
+{% endblock%}
