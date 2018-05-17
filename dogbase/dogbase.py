@@ -108,7 +108,6 @@ def delete_ajax_group(id):
     return jsonify({"id": str(group.id), "name": group.name})
 
 
-# breed-all.html adds song id to the edit button using a hidden input
 @app.route('/breed')
 def show_all_breeds():
     breed = Breed.query.all()
@@ -138,7 +137,7 @@ def add_breeds():
 
 @app.route('/breed/edit/<int:id>', methods=['GET', 'POST'])
 def edit_breed(id):
-    breed = Breed.query.filter_by(id=id).first() #may need to change
+    breed = Breed.query.filter_by(id=id).first()
     group = Group.query.all()
     if request.method == 'GET':
         return render_template('breed-edit.html', breed=breed, group=group)
@@ -179,12 +178,6 @@ def delete_ajax_breed(id):
 @app.route('/about')
 def about():
     return render_template('about.html')
-
-
-@app.route('/breed/<int:id>/')
-def get_breed_id(id):
-    # return "This song's ID is " + str(id)
-    return "Hi, this is %s and the breed's id is %d" % ('administrator', id)
 
 
 if __name__ == '__main__':

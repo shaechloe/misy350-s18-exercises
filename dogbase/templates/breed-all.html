@@ -89,7 +89,6 @@
   $(document).ready(function() {
     $(".delete_ajax_btn").click(function(event) {
       var breed_id = $(this).data("breed-id");
-      // get the table row of this song
       var row = $(this).parent().parent();
       swal({
           title: "Are you sure?",

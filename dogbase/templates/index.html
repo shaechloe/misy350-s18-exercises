@@ -11,6 +11,24 @@
       width: 100;
       border-radius:180px;
     }
+    img[src="{{ url_for('static', filename='img/jump.gif') }}"]{
+      height: 300px;
+      width: 300px;
+      border-radius:200px;
+      margin: 50px;
+    }
+    img[src="{{ url_for('static', filename='img/hifive.gif') }}"]{
+      height: 300px;
+      width: 300px;
+      border-radius:200px;
+      margin: 50px;
+    }
+    img[src="{{ url_for('static', filename='img/weave.gif') }}"]{
+      height: 300px;
+      width: 300px;
+      border-radius:200px;
+      margin: 50px;
+    }
   </style>
 {% endblock %}
 {% block page_content%}
@@ -35,21 +53,9 @@
       </p>
     </h5>
   </div>
-  <div class="outer">
-    <center>
-      <img src="{{ url_for('static', filename='img/hifive.gif') }}"></center>
-  </div><br>
+  <img src="{{ url_for('static', filename='img/jump.gif') }}" class="rounded">
+  <img src="{{ url_for('static', filename='img/hifive.gif') }}" class="rounded">
+  <img src="{{ url_for('static', filename='img/weave.gif') }}" class="rounded">
 
-<!--  <div class="inner">
-    <center>
-      <img src="{{ url_for('static', filename='img/giphy.gif') }}">
-    </center>
-  </div><br>
-
-  <div class="outer">
-    <center>
-      <img src="{{ url_for('static', filename='img/tesla-gif.gif') }}">
-    </center>
-  </div> -->
 
   {% endblock%}

@@ -30,7 +30,8 @@ Breed ID | Breed Name | Size | Color | Description | Group Name
 7 | Border Collie |  Medium | Wide Range and Mix of Colors |A remarkably bright workaholic, the Border Collie is an amazing dog..maybe a bit too amazing for owners without the time, energy, or means to keep it occupied. These energetic dogs will settle down for cuddle time when the workday is done. | Herding Group
 
 
-## To Run the Application
+## To Run this DogBase Application
+  *Make sure to use Python version 2.7.x.*
 
 ### Install necessary virtual environment file:
 
@@ -51,30 +52,3 @@ Breed ID | Breed Name | Size | Color | Description | Group Name
 ### Run the development server with the debugger on
 
   *$ python manage.py runserver -d*
-
-
-
-
-Make sure to use Python version 2.7.x.
-
-Install `virtualenv` if needed.
-
-If you do not have a virtual environment yet on the project folder, set it up with:
-
-    $ virtualenv venv
-
-Then activate the virtual environment
-
-    $ source venv/bin/activate
-
-Install packages
-
-    $ pip install -r requirements.txt
-
-To initialize the database:
-
-    $ python manage.py deploy
-
-To run the development server (use `-d` to enable debugger and reloader):
-
-    $ python manage.py runserver -d
